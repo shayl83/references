@@ -31,7 +31,7 @@ export default class App extends Component {
     return (
       <header>
         <div className="test">Webpack is doing its thing with React and ES2015</div>
-        <div>{counter} stacey changed</div>
+        <div>{counter} stacey changed in intellij</div>
       </header>
     );
   }
