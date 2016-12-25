@@ -1,10 +1,11 @@
-import { render } from "react-dom";
-import React from "react";
-import App from "./components/App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import style from './node_modules/node.normalize.scss/_normalize.scss';
 
-const containerEl = document.getElementById("container");
+//this page just renders the actual app
 
-render(
-  <App/>,
-  containerEl
+ReactDOM.render(
+    <App />,
+    document.getElementById('container')
 );
