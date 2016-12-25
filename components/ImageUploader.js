@@ -32,6 +32,14 @@ export default class ImageUploader extends React.Component {
         console.log(imageURL);
     }
     render (){
+        let uploaded;
+        if (this.state.data_uri){
+            uploaded = (
+                <div>
+                    <img className='image-preview' src={this.state.data_uri} />
+                </div>
+            );
+        }
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Image Title</label>
@@ -40,6 +48,7 @@ export default class ImageUploader extends React.Component {
                 <input type="text"/>
                 <input type="file" className="image-uploader" onChange={this.handleFile} />
                 <input type="submit" />
+                {uploaded}
             </form>
         );
     }

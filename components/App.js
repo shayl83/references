@@ -19,7 +19,7 @@ export default class App extends React.Component {
                     <div className="upload-title">
                         Upload an Image
                     </div>
-                    <ImageUploader />
+                    <ImageUploader/>
                 </header>
                 <MainWindow />
                 <Sidebar />
