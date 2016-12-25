@@ -1,30 +1,33 @@
 import React from 'react';
+import MainWindow from './MainWindow.js';
+import Sidebar from './Sidebar.js';
 import style from '../scss/main.scss';
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         //this.state = { counter: 0 };
+        //this.state = {value: ''};
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        console.log(event);
     }
 
     render() {
+
         return (
             <div className="app-container">
-                <header>
-                    <div className="test">Webpack is doing its thing with React and ES2015</div>
-                    <div>stacey changed in intellij hi lance test</div>
+                <header className="upload-header">
+                    <div className="upload-title">
+                        Upload an Image
+                    </div>
+                    <input type="file" className="image-uploader" onChange={this.handleChange} />
                 </header>
-                <section className="main-image-view">
-                    main image view here
-                </section>
-                <section className="sidebar">
-                    sidebar tree
-                    <ul>
-                        <li>Category 1</li>
-                        <li>Category 2</li>
-                        <li>Category 3</li>
-                    </ul>
-                </section>
+                <MainWindow />
+                <Sidebar />
                 <div className="clear"></div>
             </div>
         );
