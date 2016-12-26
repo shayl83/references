@@ -13,9 +13,9 @@ export default class Sidebar extends React.Component {
             <section className="sidebar">
                 sidebar tree
                 <ul>
-                    <li>Category 1</li>
-                    <li>Category 2</li>
-                    <li>Category 3</li>
+                    {this.props.category.map(function(name, index){
+                        return <li key={ index }>{name}</li>;
+                    })}
                 </ul>
             </section>
         );

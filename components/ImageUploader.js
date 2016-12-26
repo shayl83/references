@@ -10,7 +10,7 @@ export default class ImageUploader extends React.Component {
         this.state = {
             data_uri: null,
             textValue: null
-        }
+        };
 
         this.handleFile = this.handleFile.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -65,8 +65,13 @@ export default class ImageUploader extends React.Component {
                 <input type="text" />
                 <input type="file" className="image-uploader" onChange={this.handleFile} />
                 <input type="submit" />
-                <div><strong>Image Title:</strong> {imageTitle}</div>
+                <div>
+                    <strong>Image Title:</strong> {imageTitle}
+                </div>
                 <div>Uploaded Image: {uploaded}</div>
+                <div className="main-window-sidebar">
+                    {this.props.children}
+                </div>
             </form>
         );
     }

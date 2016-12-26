@@ -12,7 +12,9 @@ export default class MainWindow extends React.Component {
         return (
             <section className="main-view">
                 <div className="main-image-thumb">
+                    {this.props.children}
                     put whatever image I uploaded here as a thumbnail
+                    <img src={this.props.imageSrc} />
                 </div>
                 <div className="main-image-view">
                     display big image I'm viewing for arting here mainwindow
