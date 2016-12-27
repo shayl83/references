@@ -13,12 +13,12 @@ export default class MainWindow extends React.Component {
             <section className="main-view">
                 <div className="main-image-thumb">
                     {this.props.children}
-                    put whatever image I uploaded here as a thumbnail
-                    <img src={this.props.imageSrc} />
+                    <div>
+                        <strong>{this.props.imageCat}</strong>
+                    </div>
                 </div>
                 <div className="main-image-view">
-                    display big image I'm viewing for arting here mainwindow
-                    has changed why hmr not working!! now does it work?
+                    <div><img src={this.props.imageSrc} /></div>
                 </div>
             </section>
         );

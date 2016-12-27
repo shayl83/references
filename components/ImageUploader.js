@@ -34,7 +34,7 @@ export default class ImageUploader extends React.Component {
         //     uploaded_uri: this.state.data_uri
         // });
 
-        this.props.onSubmit(this.state.data_uri);
+        this.props.uploadSubmit(this.state.data_uri, this.state.textValue);
 
     }
     handleChange(e){
@@ -43,22 +43,22 @@ export default class ImageUploader extends React.Component {
         });
     }
     render (){
-        let uploaded;
-        let imageTitle;
-        if (this.state.uploaded_uri){
-            uploaded = (
-                <div>
-                    <img className='image-preview' src={this.state.uploaded_uri} />
-                </div>
-            );
-        }
-        if (this.state.textValue){
-            imageTitle = (
-              <div>
-                  {this.state.textValue}
-              </div>
-            );
-        }
+        // let uploaded;
+        // let imageTitle;
+        // if (this.state.uploaded_uri){
+        //     uploaded = (
+        //         <div>
+        //             <img className='image-preview' src={this.state.uploaded_uri} />
+        //         </div>
+        //     );
+        // }
+        // if (this.state.textValue){
+        //     imageTitle = (
+        //       <div>
+        //           {this.state.textValue}
+        //       </div>
+        //     );
+        // }
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>Image Title</label>
@@ -67,10 +67,10 @@ export default class ImageUploader extends React.Component {
                 <input type="text" />
                 <input type="file" className="image-uploader" onChange={this.handleFile} />
                 <input type="submit" />
-                <div>
-                    <strong>Image Title:</strong> {imageTitle}
-                </div>
-                <div>Uploaded Image: {uploaded}</div>
+                {/*<div>*/}
+                    {/*<strong>Image Title:</strong> {imageTitle}*/}
+                {/*</div>*/}
+                {/*<div>Uploaded Image: {uploaded}</div>*/}
                 <div className="main-window-sidebar">
                     {this.props.children}
                 </div>

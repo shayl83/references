@@ -10,15 +10,17 @@ export default class App extends React.Component {
         //this.state = { counter: 0 };
         //this.state = {value: ''};
         this.state = {
-          imageVal:null
+            imageVal:null,
+            textVal:null
         };
         this.imageSubmit = this.imageSubmit.bind(this);
     }
 
-    imageSubmit(value) {
+    imageSubmit(value, text) {
         //console.log("Value", value);
         this.setState({
-            imageVal: value
+            imageVal: value,
+            textVal:text
         });
     }
 
@@ -33,9 +35,10 @@ export default class App extends React.Component {
                         Upload an Image
                     </div>
                 </header>
-                <ImageUploader onSubmit={this.imageSubmit}>
+                <ImageUploader uploadSubmit={this.imageSubmit}>
                     <MainWindow
                         imageSrc={this.state.imageVal}
+                        imageCat={this.state.textVal}
                     >
                     </MainWindow>
                     <Sidebar
