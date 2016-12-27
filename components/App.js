@@ -12,12 +12,9 @@ export default class App extends React.Component {
     }
 
     render() {
-        function handleClick(e){
-            console.log(e);
-        }
         //these categories will come from user-inputted data eventually...somehow
+        //using fake data right now
         //at last I'm passing props down, maybe I'll move the image uploader into this area for now until I figure it out
-        let categories = ['animals', 'humans', 'monsters']
         return (
             <div className="app-container">
                 <header className="upload-header">
@@ -26,10 +23,14 @@ export default class App extends React.Component {
                     </div>
                 </header>
                 <ImageUploader>
-                    <MainWindow imageSrc="http://lorempixel.com/400/200/">
+                    <MainWindow
+                        imageSrc={this.props.data.defaultImage}
+                    >
                     </MainWindow>
                     <Sidebar
-                        category={categories}
+                        category = {this.props.data.categories}
+                        subCategory = {this.props.data.subCategories}
+                        imageData = {this.props.data.imageData}
                     />
                 </ImageUploader>
                 <div className="clear"></div>
