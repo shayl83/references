@@ -18,7 +18,7 @@ export default class MainWindow extends React.Component {
                 </div>
                 <div className="main-image-view">
                     display big image I'm viewing for arting here mainwindow
-                    has changed why hmr not working!!
+                    has changed why hmr not working!! now does it work?
                 </div>
             </section>
         );

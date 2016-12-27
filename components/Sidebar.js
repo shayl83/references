@@ -16,7 +16,7 @@ export default class Sidebar extends React.Component {
 
         return (
             <section className="sidebar">
-                sidebar tree
+                sidebar tree goes here
                 <ul onClick={this.getImageData}>
                     {this.props.category.map(function(name, index){
                         return <li key={ index }>{name}</li>;

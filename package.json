@@ -4,7 +4,8 @@
   "description": "art references project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot -w"
+    "start": "webpack-dev-server --progress --inline --hot -w",
+    "develop": "webpack-dev-server -d --inline --progress --colors --hot"
   },
   "repository": {
     "type": "git",
