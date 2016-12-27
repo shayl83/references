@@ -30,9 +30,11 @@ export default class ImageUploader extends React.Component {
     }
     handleSubmit(e){
         e.preventDefault();
-        this.setState({
-            uploaded_uri: this.state.data_uri
-        });
+        // this.setState({
+        //     uploaded_uri: this.state.data_uri
+        // });
+
+        this.props.onSubmit(this.state.data_uri);
 
     }
     handleChange(e){

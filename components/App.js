@@ -9,6 +9,17 @@ export default class App extends React.Component {
         super(props);
         //this.state = { counter: 0 };
         //this.state = {value: ''};
+        this.state = {
+          imageVal:null
+        };
+        this.imageSubmit = this.imageSubmit.bind(this);
+    }
+
+    imageSubmit(value) {
+        //console.log("Value", value);
+        this.setState({
+            imageVal: value
+        });
     }
 
     render() {
@@ -22,9 +33,9 @@ export default class App extends React.Component {
                         Upload an Image
                     </div>
                 </header>
-                <ImageUploader>
+                <ImageUploader onSubmit={this.imageSubmit}>
                     <MainWindow
-                        imageSrc={this.props.data.defaultImage}
+                        imageSrc={this.state.imageVal}
                     >
                     </MainWindow>
                     <Sidebar
