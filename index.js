@@ -35,9 +35,48 @@ const fakeAppData = {
     ],
     defaultImage: "http://lorempixel.com/400/200/cats"
 };
+// class Team {
+//     constructor(species, attributes, players){
+//
+//     }
+// };
+
+const gameData = {
+    teams: {
+        gargoyles: {
+            title:'Gargoyles',
+            health:1,
+            strength:1,
+            insanity:1
+        },
+        dragons: {
+            title:'Dragons',
+            health:1,
+            strength:1,
+            insanity:1
+        },
+        kittens: {
+            title:'Kittens',
+            health:1,
+            strength:1,
+            insanity:1
+        }
+    },
+    arenas: {
+        cave: {
+            darkness:1,
+            size:1
+        },
+        beach: {
+            darkness:1,
+            size:1
+        }
+    }
+}
+
 ReactDOM.render(
     <App
-        data={fakeAppData}
+        gameData={gameData}
     />,
     document.getElementById('container')
 );
