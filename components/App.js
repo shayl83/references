@@ -22,12 +22,19 @@ export default class App extends React.Component {
 
         this.choseTeam = this.choseTeam.bind(this);
         this.handleReady = this.handleReady.bind(this);
+        this.namedTeam = this.namedTeam.bind(this);
     }
 
     choseTeam(team){
         //they chose this team so set the state to what it is
         this.setState({
             teamChoice:team
+        });
+    }
+    namedTeam(teamName){
+        //they named the team so set the state to what it is
+        this.setState({
+            teamName:teamName
         });
     }
     handleReady(e){
@@ -67,9 +74,11 @@ export default class App extends React.Component {
         }
         //if the player is ready and has picked a team, its time to move on!
         if (this.state.playerReady && this.state.teamChoice) {
-            nameTeam = <NameTeam />;
+            nameTeam = <NameTeam
+                onNameTeam={this.namedTeam}
+            />;
         }
-
+        //once everything is named, you can pass all the info into the "Game" component, and then do things from there next
         return (
             <div className="app-container">
                 <header className="upload-header">
