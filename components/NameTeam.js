@@ -3,7 +3,7 @@
  */
 import React from 'react';
 
-//connects upward to App.js
+//connects upward to TitleWindow.js
 
 export default class NameTeam extends React.Component {
     constructor(props){
@@ -20,8 +20,12 @@ export default class NameTeam extends React.Component {
         });
     }
     handleSubmit(event){
+        let teamChoice = this.props.teamChoice;
+        let teamName = this.state.value;
         event.preventDefault();
         this.props.namedTeam(this.state.value);
+        //this sends the player's overall choices up to the app.js file to gamewindow can use it
+        this.props.startGame(teamChoice, teamName);
     }
     render(){
         return (

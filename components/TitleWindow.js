@@ -32,14 +32,20 @@ export default class TitleWindow extends React.Component {
     render(){
         return (
             <div>
-                <TeamSelect
-                    gameData={this.props.gameData}
-                    choseTeam={this.choseTeam}
-                />
-                <NameTeam
-                    gameData={this.props.gameData}
-                    namedTeam={this.namedTeam}
-                />
+                {/* if they haven't chosen a team, show teamchoice component, otherwise hide */}
+                {!this.state.teamChoice ?
+                    <TeamSelect
+                        gameData={this.props.gameData}
+                        choseTeam={this.choseTeam}
+                /> : null}
+                {/* if they HAVE chosen a team show name team component, otherwise hide - will return startGame when ready, which goes back up to app.js */}
+                {this.state.teamChoice ?
+                    <NameTeam
+                        gameData={this.props.gameData}
+                        namedTeam={this.namedTeam}
+                        teamChoice={this.state.teamChoice}
+                        startGame={this.props.startGame}
+                /> : null}
             </div>
         );
     }

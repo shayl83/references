@@ -12,7 +12,7 @@ export default class GameWindow extends React.Component {
     render(){
         return (
           <div>
-              the game
+             You chose: {this.props.playerTeam} {this.props.playerTeamName}
           </div>
         );
     }

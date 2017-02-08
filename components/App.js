@@ -17,75 +17,21 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            teamChoice:null,
-            teamName:null,
-            playerReady:false,
+            playerTeam:null,
+            playerTeamName:null,
             gameReady:false
         };
-
-        // this.choseTeam = this.choseTeam.bind(this);
-        // this.handleReady = this.handleReady.bind(this);
-        // this.namedTeam = this.namedTeam.bind(this);
         this.startGame = this.startGame.bind(this);
     }
-
-    // choseTeam(team){
-    //     //they chose this team so set the state to what it is
-    //     this.setState({
-    //         teamChoice:team
-    //     });
-    // }
-    // namedTeam(teamName){
-    //     //they named the team so set the state to what it is
-    //     this.setState({
-    //         teamName:teamName
-    //     });
-    // }
-    // handleReady(e){
-    //     if (e.target.value.indexOf('yes') >= 0){
-    //         this.setState({
-    //             playerReady:true
-    //         });
-    //     }
-    //     else {
-    //         this.setState({
-    //             playerReady:false,
-    //             teamChoice:null
-    //         });
-    //     }
-    // }
-    startGame(e){
-
+    //this comes up from <TeamChoice> and <TeamName> and lets us know at the app level what the player chose for each, which I can pass to gamewindow
+    startGame(teamChoice, teamName){
+        this.setState({
+            playerTeam:teamChoice,
+            playerTeamName:teamName,
+            gameReady:true
+        });
     }
-
     render() {
-
-        //these categories will come from user-inputted data eventually...somehow
-        // let youChose = null;
-        // let pickTeam = null;
-        // let nameTeam = null;
-        //
-        // //if the player is not ready and they haven't already picked a team, they can pick a team
-        // if (!this.state.playerReady && !this.state.teamChoice){
-        //     pickTeam = <TeamSelect
-        //         onTeamChoice={this.choseTeam}
-        //         gameData={this.props.gameData}
-        //     />;
-        // }
-        // //if the player is not ready but has picked a team, let them be ready
-        // if (!this.state.playerReady && this.state.teamChoice){
-        //     youChose = <div>
-        //         <div>You Chose Team {this.state.teamChoice}, Are you Ready?? </div>
-        //         <button value="yes" onClick={this.handleReady}>Hell Yeah!</button>
-        //         <button onClick={this.handleReady} value="no">NO!!! Wrong Team!</button>
-        //     </div>;
-        // }
-        // //if the player is ready and has picked a team, its time to move on!
-        // if (this.state.playerReady && this.state.teamChoice) {
-        //     nameTeam = <NameTeam
-        //         onNameTeam={this.namedTeam}
-        //     />;
-        // }
         //once everything is named, you can pass all the info into the "Game" component, and then do things from there next
         return (
             <div className="app-container">
@@ -94,17 +40,11 @@ export default class App extends React.Component {
                     startGame={this.startGame}
                     gameData={this.props.gameData}
                 /> : null}
-                {/*<header className="upload-header">*/}
-                    {/*<div className="upload-title">*/}
-                        {/*{this.state.teamChoice ? 'Team ' + this.state.teamChoice : 'Choose a Team'}*/}
-                    {/*</div>*/}
-                {/*</header>*/}
-                {/*{pickTeam}*/}
-                {/*{youChose}*/}
-                {/*{nameTeam}*/}
                 {/* if the state of the game IS ready, show the game window */}
                 {this.state.gameReady ? <GameWindow
                         gameData={this.props.gameData}
+                        playerTeam={this.state.playerTeam}
+                        playerTeamName={this.state.playerTeamName}
                 /> : null}
                 <div className="clear"></div>
             </div>
