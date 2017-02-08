@@ -11,7 +11,7 @@ export default class TeamSelect extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(e){
-        this.props.onTeamChoice(e.target.value);
+        this.props.choseTeam(e.target.value);
     }
     render(){
         return (

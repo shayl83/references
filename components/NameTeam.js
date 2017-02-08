@@ -21,7 +21,7 @@ export default class NameTeam extends React.Component {
     }
     handleSubmit(event){
         event.preventDefault();
-        this.props.onNameTeam(this.state.value);
+        this.props.namedTeam(this.state.value);
     }
     render(){
         return (
