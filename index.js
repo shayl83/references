@@ -60,6 +60,12 @@ const gameData = {
             health:1,
             strength:1,
             insanity:1
+        },
+        werewolves: {
+            title:'Werewolves',
+            health:1,
+            strength:1,
+            insanity:1
         }
     },
     arenas: {
