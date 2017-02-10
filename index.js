@@ -43,7 +43,7 @@ const gameData = {
 function Team(title, health, strength, insanity, players){
     this.title = title;
     this.health = health;
-    this.strenth = strength;
+    this.strength = strength;
     this.insanity = insanity;
     this.players = players;
 }
