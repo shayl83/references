@@ -12,7 +12,7 @@ export default class TitleWindow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            teamChoice:null,
+            teamSpecies:null,
             teamName:null
         };
         this.choseTeam = this.choseTeam.bind(this);
@@ -21,7 +21,7 @@ export default class TitleWindow extends React.Component {
     choseTeam(team){
         //they chose this team so set the state to what it is
         this.setState({
-            teamChoice:team
+            teamSpecies:team
         });
     }
     namedTeam(teamName){
@@ -33,26 +33,27 @@ export default class TitleWindow extends React.Component {
     render(){
         return (
             <div>
-                {/* if they haven't chosen a team, show teamchoice component, otherwise hide */}
-                {!this.state.teamChoice ?
+                {/* if they haven't chosen a team, show teamSpecies component, otherwise hide */}
+                {!this.state.teamSpecies ?
                     <TeamSelect
                         gameData={this.props.gameData}
                         choseTeam={this.choseTeam}
                 /> : null}
                 {/* if they HAVE chosen a team show name team component, otherwise hide - will return startGame when ready, which goes back up to app.js */}
-                {this.state.teamChoice && !this.state.teamName ?
+                {this.state.teamSpecies && !this.state.teamName ?
                     <NameTeam
                         gameData={this.props.gameData}
                         namedTeam={this.namedTeam}
-                        teamChoice={this.state.teamChoice}
+                        teamSpecies={this.state.teamSpecies}
 
                 /> : null}
                 {/* if player has named their team, now they can choose players*/}
                 {this.state.teamName ?
                     <PlayerSelection
                         startGame={this.props.startGame}
-                        teamChoice={this.state.teamChoice}
+                        teamSpecies={this.state.teamSpecies}
                         teamName={this.state.teamName}
+                        gameData={this.props.gameData}
                     /> : null}
                 {/* after they choose their players, finally the game is ready to start */}
             </div>

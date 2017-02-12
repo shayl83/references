@@ -23,10 +23,10 @@ export default class App extends React.Component {
         };
         this.startGame = this.startGame.bind(this);
     }
-    //this comes up from <TeamChoice> and <TeamName> and lets us know at the app level what the player chose for each, which I can pass to gamewindow
-    startGame(teamChoice, teamName){
+    //this comes up from <teamSpecies> and <TeamName> and lets us know at the app level what the player chose for each, which I can pass to gamewindow
+    startGame(teamSpecies, teamName){
         this.setState({
-            playerTeam:teamChoice,
+            playerTeam:teamSpecies,
             playerTeamName:teamName,
             gameReady:true
         });

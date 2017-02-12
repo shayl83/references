@@ -7,25 +7,25 @@ import style from './node_modules/node.normalize.scss/_normalize.scss';
 const gameData = {
     //title, health, strength, insanity, players
     teams: {
-        team1: new Team('Gargoyles', 20, 20, 5, {
+        gargoyles: new Team('Gargoyles', 20, 20, 5, {
             //name, steroids
             player1:new Player('stacey',30),
             player2:new Player('shayl',20),
             player3:new Player('hyster',50)
         }),
-        team2: new Team('Dragons', 30, 25, 10, {
+        dragons: new Team('Dragons', 30, 25, 10, {
             //name, steroids
             player1:new Player('stacey',0),
             player2:new Player('shayl',10),
             player3:new Player('hyster',50)
         }),
-        team3: new Team('Kittens', 15, 5, 30, {
+        kittens: new Team('Kittens', 15, 5, 30, {
             //name, steroids
             player1:new Player('stacey',0),
             player2:new Player('shayl',10),
             player3:new Player('hyster',50)
         }),
-        team4: new Team('Werewolves', 18, 35, 25, {
+        werewolves: new Team('Werewolves', 18, 35, 25, {
             //name, steroids
             player1:new Player('stacey',0),
             player2:new Player('shayl',10),

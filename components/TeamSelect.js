@@ -10,7 +10,7 @@ export default class TeamSelect extends React.Component {
         super(props);
         this.state = {
             choseTeam:false,
-            teamChoice:null
+            teamSpecies:null
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
@@ -18,22 +18,22 @@ export default class TeamSelect extends React.Component {
     }
 
     handleClick(e){
-        //let teamChoice = e.target.value;
+        //let teamSpecies = e.target.value;
         //this.props.choseTeam(e.target.value);
         this.setState({
-            teamChoice: e.target.value,
+            teamSpecies: e.target.value,
             choseTeam:true
         });
     }
     //call choseTeam callback up to TitleWindow.js
     handleConfirm() {
-        this.props.choseTeam(this.state.teamChoice);
+        this.props.choseTeam(this.state.teamSpecies);
     }
     //reset team choice if they choose no
     handleReset(){
         this.setState({
             choseTeam:false,
-            teamChoice:null
+            teamSpecies:null
         });
     }
     render(){
@@ -41,7 +41,7 @@ export default class TeamSelect extends React.Component {
         let teams = this.props.gameData.teams;
         let confirm = null;
         //check for buttons being needed
-        if (!this.state.teamChoice){
+        if (!this.state.teamSpecies){
             for (var team in teams){
                 if (!teams.hasOwnProperty(team)){
                     continue;
@@ -54,7 +54,7 @@ export default class TeamSelect extends React.Component {
         //if they have chosen a team show confirm
         if (this.state.choseTeam) {
             //if they chose a team, have a confirm button
-            confirm = <div>You chose {this.state.teamChoice}. Is that correct?
+            confirm = <div>You chose {this.state.teamSpecies}. Is that correct?
                 <button onClick={this.handleConfirm}>Yes</button> <button onClick={this.handleReset}>No!</button>
             </div>;
         }

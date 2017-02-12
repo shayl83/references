@@ -20,17 +20,18 @@ export default class NameTeam extends React.Component {
         });
     }
     handleSubmit(event){
-        //let teamChoice = this.props.teamChoice;
+        //let teamSpecies = this.props.teamSpecies;
         //let teamName = this.state.value;
         event.preventDefault();
-        this.props.namedTeam(this.state.value);
+        //trim so they can't name their team a blank value
+        this.props.namedTeam(this.state.value.trim());
         //this sends the player's overall choices up to the app.js file to gamewindow can use it
-        //this.props.startGame(teamChoice, teamName);
+        //this.props.startGame(teamSpecies, teamName);
     }
     render(){
         return (
         <form onSubmit={this.handleSubmit}>
-              <div>Team species: {this.props.teamChoice}</div>
+              <div>Team species: {this.props.teamSpecies}</div>
               <div>Name your team</div>
               <input type="text" onChange={this.handleChange} value={this.state.value} />
               <input type="submit" value="Submit" />
