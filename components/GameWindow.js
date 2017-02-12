@@ -13,6 +13,8 @@ export default class GameWindow extends React.Component {
         return (
           <div>
              You chose: {this.props.playerTeam} {this.props.playerTeamName}
+              <div>Ready to play?</div>
+              <button>Yes</button> <button>No</button>
           </div>
         );
     }
