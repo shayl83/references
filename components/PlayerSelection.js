@@ -34,31 +34,40 @@ export default class PlayerSelection extends React.Component{
         //can also remove
         //also it will calculate some sort of numbers crap
         let playerArrayData = [];
+        let roster = {};
         //console.log(teamObj);
         //get players from chosen team
-        for (var player in teamObj){
-            if(!teamObj.hasOwnProperty(player)){
-                continue;
-            }
-            let obj = teamObj[player];
-            players.push(
-                <div key={obj.name}>
-                    <div>
-                        <strong>Player Name: {obj.name}</strong>
-                    </div>
-                    <div>Player Steroids: {obj.steroids}</div>
-                    <button onClick={
-                        ()=>{
-                            playerArrayData.push(obj);
-                            //console.log(playerArrayData);
-                            //playerSelection(obj);
-                            //this also doesn't work the way I want
-                            playerChoice(obj);
-                        }
-                    }>Select</button><hr/>
-                </div>
-            );
-        }
+        Object.keys(teamObj).forEach(function(_item){
+
+            roster[_item] = teamObj[_item];
+        });
+        console.log(roster);
+
+        {/*for (var player in teamObj){*/}
+            {/*if(!teamObj.hasOwnProperty(player)){*/}
+                {/*continue;*/}
+            {/*}*/}
+            {/*let obj = teamObj[player];*/}
+            {/*//console.log(obj);*/}
+
+            {/*players.push(*/}
+                {/*<div key={obj.name}>*/}
+                    {/*<div>*/}
+                        {/*<strong>Player Name: {obj.name}</strong>*/}
+                    {/*</div>*/}
+                    {/*<div>Player Steroids: {obj.steroids}</div>*/}
+                    {/*<button onClick={*/}
+        //                 ()=>{
+        //                     playerArrayData.push(obj);
+        //                     console.log(playerArrayData);
+        //                     //playerSelection(obj);
+        //                     //this also doesn't work the way I want
+        //                     //playerChoice(obj);
+        //                 }
+        //             }>Select</button><hr/>
+        //         </div>
+        //     );
+        // }
 
         return (
             <div>
